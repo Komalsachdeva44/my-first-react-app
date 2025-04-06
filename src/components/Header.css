@@ -1,0 +1,118 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #282c34;
+    color: white;
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Hamburger (Mobile Only) */
+  .hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+  }
+  
+  /* Sidebar (Mobile Only) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background-color: #20232a;
+    color: white;
+    padding: 2rem 1rem;
+    transition: all 0.3s ease;
+    z-index: 4;
+  }
+  
+  .sidebar.show {
+    left: 0;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-links li {
+    margin: 1.5rem 0;
+  }
+  
+  .sidebar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  /* Backdrop when sidebar opens */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+  
+  /* ======== Desktop View ======== */
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none; /* hide hamburger on desktop */
+    }
+  
+    .sidebar {
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+      padding: 0;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      transition: none;
+    }
+  
+    .sidebar-links {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .sidebar-links li {
+      margin: 0;
+    }
+  
+    .sidebar-links a {
+      font-size: 1rem;
+    }
+  
+    .backdrop {
+      display: none;
+    }
+  }
+  

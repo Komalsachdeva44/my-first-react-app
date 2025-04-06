@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header />
+
+      <header style={{ padding: "2rem", textAlign: "center" }}>
+        <h1>Hello, I'm Komal 👋</h1>
+        <h2>Laravel Developer & React Learner 🚀</h2>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I'm exploring React to build beautiful and powerful frontend apps!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <hr style={{ margin: "2rem auto", width: "50%" }} />
+        <h3>Contact</h3>
+        <p>Email: komal@example.com</p>
       </header>
     </div>
   );
