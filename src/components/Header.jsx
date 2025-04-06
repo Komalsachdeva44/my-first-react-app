@@ -5,11 +5,13 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(!isMenuOpen); 
+    // if false the make it true if true than make it false 
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    // by default false 
   };
 
   return (
