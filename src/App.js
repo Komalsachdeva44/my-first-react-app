@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import ThemeCustomizer from './components/ThemeCustomizer';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ThemeCustomizer />
 
       <header style={{ padding: "2rem", textAlign: "center" }}>
         <h1>Hello, I'm Komal 👋</h1>

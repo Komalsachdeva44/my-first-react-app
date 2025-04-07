@@ -3,36 +3,69 @@ import './Header.css';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('#home');
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); 
-    // if false the make it true if true than make it false 
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    // by default false 
+  };
+
+  const handleLinkClick = (hash) => {
+    setActiveLink(hash);
+    closeMenu();
   };
 
   return (
     <>
-      {/* Backdrop when sidebar is open */}
       {isMenuOpen && <div className="backdrop" onClick={closeMenu}></div>}
 
       <nav className="navbar">
         <div className="logo">Komal ⚡</div>
 
-        {/* Sidebar (shows links for both mobile & desktop) */}
         <div className={`sidebar ${isMenuOpen ? 'show' : ''}`}>
           <ul className="sidebar-links">
-            <li><a href="#home" onClick={closeMenu}>Home</a></li>
-            <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-            <li><a href="#about" onClick={closeMenu}>About</a></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+            <li>
+              <a 
+                href="#home" 
+                className={activeLink === '#home' ? 'active' : ''}
+                onClick={() => handleLinkClick('#home')}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#projects" 
+                className={activeLink === '#projects' ? 'active' : ''}
+                onClick={() => handleLinkClick('#projects')}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#about" 
+                className={activeLink === '#about' ? 'active' : ''}
+                onClick={() => handleLinkClick('#about')}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#contact" 
+                className={activeLink === '#contact' ? 'active' : ''}
+                onClick={() => handleLinkClick('#contact')}
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
-        {/* Hamburger icon (visible only on mobile) */}
         <div className="hamburger" onClick={toggleMenu}>
           ☰
         </div>
